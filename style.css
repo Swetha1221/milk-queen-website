@@ -1,0 +1,2488 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green: #003d2a;
+  --deep: #002b1e;
+  --gold: #d7a63e;
+  --cream: #fff9ed;
+  --red: #a91f1d;
+}
+
+body {
+  font-family: "DM Sans", Arial, sans-serif;
+  background: var(--cream);
+  color: #173b2c;
+}
+
+/* HEADER */
+/* PREMIUM HEADER */
+
+/* PREMIUM MILK QUEEN HEADER */
+
+.topbar {
+  min-height: 125px;
+  padding: 12px 4%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+
+  background:
+    radial-gradient(circle at 50% 50%, #fffdf5 0%, #fff7e5 65%, #f8e6bd 100%);
+
+  border-bottom: 4px solid #d7a63e;
+  box-shadow: 0 5px 18px rgba(75, 48, 8, 0.12);
+
+  position: relative;
+}
+
+/* Decorative gold lines */
+
+.topbar::before,
+.topbar::after {
+  content: "✦  ❖  ✦";
+  position: absolute;
+  color: #d7a63e;
+  font-size: 17px;
+  letter-spacing: 12px;
+  opacity: .65;
+}
+
+.topbar::before {
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.topbar::after {
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Left and right sections */
+
+.header-features,
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-right {
+  justify-content: flex-end;
+}
+
+/* Feature badges */
+
+.feature-badge {
+  min-width: 115px;
+  min-height: 58px;
+  padding: 9px 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  background: linear-gradient(145deg, #075238, #002f20);
+  color: #fff8e8;
+
+  border: 2px solid #d7a63e;
+  border-radius: 14px;
+
+  box-shadow: 0 5px 12px rgba(0, 45, 30, .15);
+  text-align: center;
+}
+
+.feature-badge span {
+  color: #ffcf55;
+  font-size: 22px;
+}
+
+.feature-badge strong {
+  font-size: 11px;
+  line-height: 1.3;
+  letter-spacing: .4px;
+}
+
+/* Centre logo */
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+}
+
+.brand-caption {
+  color: #a77720;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 3px;
+}
+
+.brand img {
+  width: 190px;
+  height: 72px;
+  object-fit: contain;
+  display: block;
+  mix-blend-mode: multiply;
+}
+
+.brand-tagline {
+  color: #075238;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-top: 2px;
+}
+
+/* WhatsApp button */
+
+.top-whatsapp {
+  white-space: nowrap;
+  padding: 13px 17px;
+  font-size: 12px;
+}
+
+/* Mobile header */
+
+@media(max-width: 750px) {
+  .topbar {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 15px 10px;
+  }
+
+  .header-features,
+  .header-right {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    grid-row: 1;
+  }
+
+  .brand img {
+    width: 175px;
+  }
+
+  .feature-badge {
+    min-width: 105px;
+  }
+
+  .topbar::before,
+  .topbar::after {
+    display: none;
+  }
+}
+
+/* MOBILE HEADER */
+
+@media (max-width: 750px) {
+  .topbar {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .brand img {
+    width: 155px;
+    height: 75px;
+  }
+
+  .header-features {
+    grid-column: 1;
+    grid-row: 2;
+    flex-wrap: wrap;
+  }
+
+  .header-right {
+    grid-column: 2;
+    grid-row: 2;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .feature-badge {
+    min-width: 90px;
+    min-height: 52px;
+    padding: 6px;
+    gap: 5px;
+  }
+
+  .feature-badge span {
+    font-size: 17px;
+  }
+
+  .feature-badge strong {
+    font-size: 9px;
+  }
+
+  .top-whatsapp {
+    font-size: 10px;
+    padding: 9px;
+  }
+
+  .top-whatsapp span {
+    display: none;
+  }
+}
+
+/* HERO */
+
+.hero {
+  min-height: 390px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background: #003d2a;
+  border-bottom: 4px solid var(--gold);
+  padding: 35px 240px;
+}
+
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      rgba(0, 45, 31, .48),
+      rgba(0, 45, 31, .88) 40%,
+      rgba(0, 45, 31, .88) 65%,
+      rgba(0, 45, 31, .45)),
+    url("./assets/Indian Sweets on Brass Plates.png") center/cover no-repeat;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 690px;
+}
+
+/* MILK QUEEN BRAND ABOVE HERO MESSAGE */
+
+.hero-logo {
+  width: 190px;
+  height: 75px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 12px;
+  background: rgba(255, 250, 240, .95);
+  border-radius: 10px;
+  padding: 5px 12px;
+}
+
+.eyebrow {
+  color: #e9bd5c;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  font: 800 clamp(38px, 5vw, 62px)/1.04 "Playfair Display", serif;
+  margin: 13px 0;
+}
+
+.hero h1 em {
+  color: #f3c65e;
+}
+
+.hero-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #fff8e8;
+}
+
+.launch-note {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 9px 20px;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  color: #f7cb63;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: .7px;
+}
+
+.offer {
+  position: absolute;
+  z-index: 2;
+  right: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  background: #fff8e8;
+  border: 5px double var(--gold);
+  color: var(--green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px #0005;
+}
+
+.offer span {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.offer strong {
+  font: 800 42px "Playfair Display", serif;
+  color: var(--red);
+}
+
+.offer small {
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+/* PRODUCTS */
+
+.products {
+  padding: 32px 5% 42px;
+  background: radial-gradient(circle at 10% 10%, #fff 0, transparent 35%), var(--cream);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.section-heading>span {
+  width: 70px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.section-heading h2 {
+  font: 800 34px "Playfair Display", serif;
+  color: var(--green);
+  margin: 4px 0;
+}
+
+.section-heading p:last-child {
+  font-size: 13px;
+  color: #775b3c;
+}
+
+.section-heading .eyebrow {
+  font-size: 9px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  max-width: 1160px;
+  margin: auto;
+}
+
+.product-card {
+  background: #fffdf7;
+  border: 1px solid #e9d5ad;
+  border-radius: 16px;
+  padding: 13px 12px 12px;
+  text-align: center;
+  box-shadow: 0 6px 18px #57390e0c;
+  transition: .2s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px #57390e20;
+}
+
+/* ACTUAL PRODUCT IMAGES */
+
+.product-image {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+  border-radius: 11px;
+  background: #f8eddb;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font: 700 17px/1.2 "Playfair Display", serif;
+  color: #123b2b;
+  min-height: 42px;
+}
+
+.price {
+  font: 800 26px "Playfair Display", serif;
+  color: var(--red);
+  margin: 7px 0;
+}
+
+.price small {
+  font: 800 9px "DM Sans";
+  letter-spacing: 1px;
+  color: #6b4a22;
+}
+
+.order {
+  display: block;
+  background: #075c3a;
+  color: white;
+  text-decoration: none;
+  border-radius: 9px;
+  padding: 9px 5px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.order:hover,
+.whatsapp:hover {
+  background: #0b8b50;
+}
+
+/* FOOTER */
+
+.footer {
+  background: var(--deep);
+  color: #fff8e8;
+  border-top: 4px solid var(--gold);
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 1.2fr 1.6fr;
+  gap: 25px;
+  align-items: center;
+  padding: 25px 6%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.footer-brand img {
+  width: 230px;
+  height: 100px;
+  object-fit: contain;
+  background: #fffaf0;
+  border-radius: 8px;
+}
+
+.footer-company h2 {
+  font: 700 19px "Playfair Display", serif;
+  color: #f3c45e;
+  margin: 4px 0 8px;
+}
+
+.footer-company b {
+  font-size: 13px;
+}
+
+.footer-address,
+.footer-contact {
+  font-size: 12px;
+  line-height: 2;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-contact a {
+  color: #fff8e8;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: #f3c45e;
+}
+
+.copyright {
+  text-align: center;
+  padding: 13px;
+  background: #c38a2d;
+  color: #082c20;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* TABLET */
+
+@media(max-width: 850px) {
+  .hero {
+    padding: 35px 165px 35px 25px;
+    min-height: 410px;
+  }
+
+  .offer {
+    right: 3%;
+    width: 125px;
+    height: 125px;
+  }
+
+  .offer strong {
+    font-size: 34px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* MOBILE */
+
+@media(max-width: 540px) {
+  .topbar {
+    min-height: 75px;
+    padding: 8px 4%;
+  }
+
+  .brand img {
+    width: 165px;
+    height: 58px;
+  }
+
+  .top-whatsapp {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+
+  .top-whatsapp span {
+    display: none;
+  }
+
+  .hero {
+    padding: 30px 18px 155px;
+    min-height: 510px;
+  }
+
+  .hero-photo {
+    background:
+      linear-gradient(180deg, rgba(0, 45, 31, .78), rgba(0, 45, 31, .84)),
+      url("./assets/Indian Sweets on Brass Plates.png") center/cover no-repeat;
+  }
+
+  .hero-logo {
+    width: 155px;
+    height: 60px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-desc {
+    font-size: 12px;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .offer {
+    top: auto;
+    bottom: 18px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 112px;
+    height: 112px;
+  }
+
+  .offer strong {
+    font-size: 30px;
+  }
+
+  .section-heading {
+    gap: 8px;
+  }
+
+  .section-heading>span {
+    width: 25px;
+  }
+
+  .section-heading h2 {
+    font-size: 27px;
+  }
+
+  .section-heading p:last-child {
+    font-size: 11px;
+  }
+
+  .product-grid {
+    gap: 10px;
+  }
+
+  .product-card {
+    padding: 9px 8px;
+  }
+
+  .product-image {
+    height: 125px;
+  }
+
+  .product-card h3 {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 23px;
+  }
+
+  .order {
+    font-size: 10px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .footer-address {
+    border-top: 1px solid #ffffff30;
+    padding-top: 12px;
+  }
+
+  .footer-contact {
+    align-items: center;
+    border-top: 1px solid #ffffff30;
+    padding-top: 12px;
+  }
+
+  .footer-brand img {
+    margin: auto;
+  }
+}
+
+/* ===== PREMIUM MILK QUEEN HEADER ===== */
+
+.topbar {
+  min-height: 105px;
+  padding: 10px 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  background: linear-gradient(110deg, #fff8e8, #fffdf5, #f8e6bd);
+  border-bottom: 3px solid #d7a63e;
+}
+
+.header-features,
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.brand img {
+  width: 245px;
+  height: 85px;
+  object-fit: contain;
+}
+
+.feature-badge {
+  min-width: 130px;
+  min-height: 65px;
+  padding: 8px 12px;
+  border: 2px solid #d7a63e;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #075337, #003322);
+  color: #fff3cf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  text-align: center;
+  box-shadow: 0 5px 12px #003d2a25;
+}
+
+.feature-icon {
+  color: #ffd66e;
+  font-size: 23px;
+}
+
+.feature-badge strong {
+  font-family: "Playfair Display", serif;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+/* ===== FIREWORKS AROUND FESTIVE SWEETS ===== */
+
+.products {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.fireworks-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.products>*:not(.fireworks-layer) {
+  position: relative;
+  z-index: 2;
+}
+
+.firework {
+  position: absolute;
+  display: block;
+  font-size: 30px;
+  color: #e5a62e;
+  text-shadow:
+    0 0 8px #ffc44d,
+    0 0 18px #ff9e26,
+    0 0 30px #ffcf70;
+  animation: fireworkFly 5s ease-in-out infinite;
+  opacity: 0;
+}
+
+.f1 {
+  left: 5%;
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.f2 {
+  left: 22%;
+  top: 65%;
+  animation-delay: 1s;
+}
+
+.f3 {
+  left: 48%;
+  top: 15%;
+  animation-delay: 2s;
+}
+
+.f4 {
+  left: 70%;
+  top: 55%;
+  animation-delay: 1.5s;
+}
+
+.f5 {
+  left: 88%;
+  top: 20%;
+  animation-delay: 2.5s;
+}
+
+.f6 {
+  left: 95%;
+  top: 75%;
+  animation-delay: 3s;
+}
+
+.f7 {
+  left: 35%;
+  top: 80%;
+  animation-delay: 3.5s;
+}
+
+.f8 {
+  left: 60%;
+  top: 30%;
+  animation-delay: 4s;
+}
+
+@keyframes fireworkFly {
+  0% {
+    transform: translate(0, 80px) scale(.2) rotate(0deg);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+    transform: translate(25px, -30px) scale(1.2) rotate(90deg);
+  }
+
+  55% {
+    opacity: .9;
+    transform: translate(-20px, -90px) scale(1.5) rotate(180deg);
+  }
+
+  100% {
+    transform: translate(35px, -170px) scale(.3) rotate(270deg);
+    opacity: 0;
+  }
+}
+
+/* ===== TABLET ===== */
+
+@media(max-width: 1000px) {
+  .topbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .brand {
+    order: -1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-features,
+  .header-right {
+    flex-wrap: wrap;
+  }
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width: 540px) {
+  .topbar {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .feature-badge {
+    min-width: 95px;
+    min-height: 52px;
+    padding: 6px;
+  }
+
+  .feature-badge strong {
+    font-size: 11px;
+  }
+
+  .brand img {
+    width: 190px;
+    height: 65px;
+  }
+
+  .top-whatsapp {
+    font-size: 11px;
+    padding: 10px;
+  }
+
+  .firework {
+    font-size: 22px;
+  }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  .firework {
+    animation: none;
+    opacity: .5;
+  }
+}
+
+/* PREMIUM HEADER UPDATE */
+
+.topbar {
+  min-height: 112px;
+  padding: 12px 3%;
+  gap: 20px;
+  background: linear-gradient(110deg, #fff4d9, #fffdf6 50%, #f8e4b5);
+  border-bottom: 4px solid #d7a63e;
+  box-shadow: 0 5px 18px rgba(70, 45, 10, 0.12);
+}
+
+.header-features,
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand img {
+  width: 260px;
+  height: 88px;
+  object-fit: contain;
+}
+
+.feature-badge {
+  min-width: 135px;
+  min-height: 68px;
+  padding: 9px 13px;
+  border: 2px solid #e4b747;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #075337, #002b1e);
+  color: #fff4d5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  box-shadow: 0 5px 14px rgba(0, 45, 31, 0.2);
+}
+
+.feature-icon {
+  color: #ffd15b;
+  font-size: 25px;
+}
+
+.feature-badge strong {
+  font-family: "Playfair Display", serif;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+/* BIGGER, MORE ATTRACTIVE FIREWORKS */
+
+.firework {
+  font-size: 46px;
+  color: #f3ad22;
+  text-shadow:
+    0 0 8px #ffd45e,
+    0 0 18px #ffb52e,
+    0 0 35px #ff8c00,
+    0 0 50px #ffcf70;
+  animation: fireworkFly 4s ease-in-out infinite;
+}
+
+.f1 {
+  left: 5%;
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.f2 {
+  left: 23%;
+  top: 60%;
+  animation-delay: .8s;
+}
+
+.f3 {
+  left: 47%;
+  top: 12%;
+  animation-delay: 1.4s;
+}
+
+.f4 {
+  left: 72%;
+  top: 50%;
+  animation-delay: 2s;
+}
+
+.f5 {
+  left: 90%;
+  top: 18%;
+  animation-delay: 2.5s;
+}
+
+.f6 {
+  left: 95%;
+  top: 75%;
+  animation-delay: 1s;
+}
+
+.f7 {
+  left: 35%;
+  top: 80%;
+  animation-delay: 3s;
+}
+
+.f8 {
+  left: 60%;
+  top: 30%;
+  animation-delay: 1.8s;
+}
+
+@keyframes fireworkFly {
+  0% {
+    transform: translate(0, 70px) scale(.2) rotate(0deg);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+    transform: translate(20px, -25px) scale(1.4) rotate(90deg);
+  }
+
+  55% {
+    opacity: 1;
+    transform: translate(-15px, -75px) scale(1.8) rotate(180deg);
+  }
+
+  100% {
+    transform: translate(30px, -150px) scale(.3) rotate(270deg);
+    opacity: 0;
+  }
+}
+
+/* MOBILE HEADER */
+
+@media(max-width: 850px) {
+  .topbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .brand {
+    order: -1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-features,
+  .header-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media(max-width: 540px) {
+  .feature-badge {
+    min-width: 100px;
+    min-height: 55px;
+    padding: 6px;
+  }
+
+  .feature-badge strong {
+    font-size: 11px;
+  }
+
+  .brand img {
+    width: 190px;
+    height: 65px;
+  }
+
+  .firework {
+    font-size: 30px;
+  }
+}
+
+/* ===== NEW MILK QUEEN HEADER ===== */
+
+.topbar {
+  width: 100%;
+  min-height: 112px;
+  padding: 12px 2.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  background: linear-gradient(110deg, #003b25, #005432, #003b25);
+  border-bottom: 5px solid #e7b83e;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.22);
+  position: relative;
+  z-index: 10;
+}
+
+/* Logo on the left */
+
+.brand {
+  flex: 0 0 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0;
+  background: transparent;
+}
+
+.brand img {
+  width: 145px;
+  height: 85px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff9e9;
+  border: 2px solid #e7b83e;
+  padding: 3px;
+}
+
+/* Brand wording beside logo */
+
+.brand-message {
+  flex: 1;
+  text-align: center;
+  color: #fff1bd;
+  min-width: 200px;
+  padding: 0 12px;
+}
+
+.brand-message h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(17px, 2vw, 27px);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #ffdf79;
+  margin: 0 0 8px;
+  white-space: nowrap;
+}
+
+.brand-message p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #fff;
+  margin: 0;
+}
+
+.brand-message p span {
+  color: #f6c34d;
+  padding: 0 7px;
+}
+
+/* Feature highlights */
+
+.header-features {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex: 1.2;
+  gap: 0;
+}
+
+.feature-badge {
+  min-width: 95px;
+  padding: 5px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #fff4ce;
+  text-align: center;
+  border-left: 1px solid rgba(244, 199, 79, 0.65);
+}
+
+.feature-badge span {
+  font-size: 27px;
+  color: #f7c548;
+  line-height: 1;
+}
+
+.feature-badge strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 11px;
+  line-height: 1.35;
+  font-weight: 800;
+  color: #fff7df;
+}
+
+/* WhatsApp button */
+
+.top-whatsapp {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 17px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #fff8e5, #ffe3a0);
+  border: 2px solid #e9b83c;
+  color: #06472d;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.top-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.25);
+}
+
+.top-whatsapp b {
+  color: #a51e18;
+  font-size: 14px;
+}
+
+.wa-icon {
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #078b50;
+  color: white;
+  border-radius: 50%;
+  font-size: 13px;
+}
+
+/* Responsive header */
+
+@media (max-width: 1100px) {
+  .topbar {
+    gap: 12px;
+    padding: 12px 1.5%;
+  }
+
+  .brand {
+    flex-basis: 115px;
+  }
+
+  .brand img {
+    width: 110px;
+    height: 75px;
+  }
+
+  .feature-badge {
+    min-width: 75px;
+    padding: 5px 7px;
+  }
+
+  .feature-badge strong {
+    font-size: 9px;
+  }
+
+  .top-whatsapp {
+    padding: 11px;
+    font-size: 10px;
+  }
+
+  .top-whatsapp b {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .brand {
+    flex: 0 0 90px;
+  }
+
+  .brand img {
+    width: 88px;
+    height: 68px;
+  }
+
+  .brand-message {
+    flex: 1;
+    min-width: 180px;
+    text-align: left;
+  }
+
+  .brand-message h2 {
+    font-size: 17px;
+    white-space: normal;
+  }
+
+  .brand-message p {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .header-features {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .feature-badge {
+    flex: 1;
+    border-left: 1px solid rgba(244, 199, 79, 0.5);
+  }
+
+  .top-whatsapp {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =====================================
+   PREMIUM MILK QUEEN HEADER
+===================================== */
+
+.topbar {
+  width: 100%;
+  min-height: 115px;
+  padding: 12px 2.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  background:
+    linear-gradient(135deg, #003b24, #005333, #003b24);
+
+  border: 4px solid #d99a19;
+  border-top: 5px solid #f4c34e;
+  border-bottom: 6px solid #e6a51d;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .22);
+  position: relative;
+  z-index: 10;
+}
+
+/* Decorative golden corners */
+
+.topbar::before,
+.topbar::after {
+  content: "✦  ✧  ✦";
+  position: absolute;
+  color: #e8b43c;
+  font-size: 15px;
+  letter-spacing: 12px;
+  opacity: .85;
+}
+
+.topbar::before {
+  top: 8px;
+  left: 45%;
+}
+
+.topbar::after {
+  bottom: 7px;
+  left: 45%;
+}
+
+/* Logo */
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 205px;
+  height: 90px;
+}
+
+.brand-logo img {
+  width: 185px;
+  height: 88px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff8e7;
+  border: 3px solid #e7b63e;
+  padding: 3px;
+}
+
+/* Brand title */
+
+.brand-message {
+  flex: 1;
+  text-align: center;
+  min-width: 270px;
+}
+
+.brand-message h2 {
+  margin: 0;
+  color: #ffd15b;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 2.1vw, 32px);
+  font-weight: 800;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.brand-message p {
+  margin: 8px 0 0;
+  color: #fff8e6;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.brand-message p span {
+  color: #ffc94c;
+  padding: 0 8px;
+}
+
+/* Feature badges */
+
+.header-features {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.header-feature {
+  min-width: 95px;
+  height: 66px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+
+  color: #fff7e5;
+  background: linear-gradient(145deg, #004b30, #002e1d);
+  border: 2px solid #e5ad28;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+}
+
+.header-feature span {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.header-feature strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 11px;
+  line-height: 1.15;
+}
+
+/* WhatsApp button */
+
+.top-whatsapp {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 13px 18px;
+  border-radius: 40px;
+
+  background: linear-gradient(135deg, #fff5d9, #ffe3a0);
+  border: 2px solid #e6a51d;
+
+  color: #00452b;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+}
+
+.top-whatsapp b {
+  color: #b51d13;
+  font-size: 17px;
+}
+
+.whatsapp-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #079c5b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =====================================
+   FESTIVE FIREWORKS
+===================================== */
+
+.fireworks-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.firework {
+  position: absolute;
+  color: #f5a000;
+  font-size: 90px;
+  line-height: 1;
+  text-shadow:
+    0 0 8px #ffcf57,
+    0 0 20px rgba(255, 170, 0, .65);
+  animation: festiveSpark 2.5s ease-in-out infinite;
+}
+
+.f1 {
+  left: 4%;
+  top: 12%;
+  font-size: 115px;
+}
+
+.f2 {
+  left: 29%;
+  top: 5%;
+  font-size: 75px;
+}
+
+.f3 {
+  right: 29%;
+  top: 5%;
+  font-size: 75px;
+}
+
+.f4 {
+  right: 4%;
+  top: 12%;
+  font-size: 115px;
+}
+
+.f5 {
+  left: 12%;
+  bottom: 8%;
+  font-size: 45px;
+}
+
+.f6 {
+  right: 12%;
+  bottom: 8%;
+  font-size: 45px;
+}
+
+.f7 {
+  left: 3%;
+  top: 55%;
+  font-size: 45px;
+}
+
+.f8 {
+  right: 3%;
+  top: 55%;
+  font-size: 45px;
+}
+
+@keyframes festiveSpark {
+
+  0%,
+  100% {
+    transform: scale(.8) rotate(0deg);
+    opacity: .65;
+  }
+
+  50% {
+    transform: scale(1.15) rotate(25deg);
+    opacity: 1;
+  }
+}
+
+/* Keep product content above decorations */
+
+.section-heading,
+.product-grid {
+  position: relative;
+  z-index: 1;
+}
+
+/* =====================================
+   MOBILE RESPONSIVENESS
+===================================== */
+
+@media (max-width: 1050px) {
+  .topbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px;
+  }
+
+  .brand-logo {
+    width: 140px;
+  }
+
+  .brand-logo img {
+    width: 130px;
+  }
+
+  .brand-message {
+    min-width: 220px;
+  }
+
+  .header-features {
+    order: 3;
+  }
+
+  .top-whatsapp {
+    order: 4;
+  }
+}
+
+@media (max-width: 600px) {
+  .brand-message h2 {
+    font-size: 19px;
+    white-space: normal;
+  }
+
+  .brand-message p {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .header-feature {
+    min-width: 82px;
+  }
+
+  .top-whatsapp {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .top-whatsapp b {
+    font-size: 13px;
+  }
+
+  .firework {
+    font-size: 45px;
+  }
+}
+
+/* =========================================
+   MILK QUEEN - REFERENCE IMAGE HEADER
+========================================= */
+
+.topbar {
+  width: 100% !important;
+  min-height: 120px !important;
+  height: auto !important;
+  padding: 8px 2.5% !important;
+
+  display: grid !important;
+  grid-template-columns: 205px minmax(350px, 1fr) 520px 265px !important;
+  align-items: center !important;
+  gap: 15px !important;
+
+  background:
+    radial-gradient(ellipse at center, #005432, #00351f 75%) !important;
+
+  border: 5px solid #e6a51b !important;
+  border-top: 7px solid #f7c64b !important;
+  border-bottom: 8px solid #edb32b !important;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, .25) !important;
+
+  position: relative;
+  z-index: 10;
+}
+
+/* Golden decorative corners */
+
+.topbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  background:
+    linear-gradient(135deg, #ffd66b, transparent 18%) top left,
+    linear-gradient(225deg, #ffd66b, transparent 18%) top right,
+    linear-gradient(45deg, #ffd66b, transparent 18%) bottom left,
+    linear-gradient(315deg, #ffd66b, transparent 18%) bottom right;
+  background-size: 65px 65px;
+  background-repeat: no-repeat;
+}
+
+/* Logo */
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-right: 2px solid #e8b438;
+  padding-right: 15px;
+}
+
+.brand-logo img {
+  width: 185px !important;
+  height: 100px !important;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff9e9;
+  border: 3px solid #e9b63c;
+  padding: 3px;
+}
+
+/* Main brand title */
+
+.brand-message {
+  text-align: center;
+  min-width: 0;
+  border-right: 2px solid #e8b438;
+  padding: 10px 15px;
+}
+
+.brand-message h2 {
+  margin: 0;
+  color: #ffe3a0 !important;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 2.2vw, 32px) !important;
+  font-weight: 800;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.brand-message p {
+  margin: 9px 0 0;
+  color: #fff5df !important;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.brand-message p span {
+  color: #f6bd37;
+  padding: 0 8px;
+}
+
+/* Feature section */
+
+.header-features {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  height: 85px;
+  gap: 0 !important;
+}
+
+.header-feature {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+
+  background: transparent !important;
+  border: none !important;
+  border-right: 2px solid #dca629 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  color: #fff7e5;
+  text-align: center;
+}
+
+.header-feature:last-child {
+  border-right: none !important;
+}
+
+.feature-symbol {
+  font-size: 34px;
+  line-height: 1;
+  color: #f7c13d;
+  text-shadow: 0 0 8px rgba(255, 190, 45, .45);
+}
+
+.header-feature strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  line-height: 1.2;
+  color: #fff8e8;
+}
+
+/* WhatsApp button */
+
+.top-whatsapp {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 10px 13px !important;
+  min-height: 72px;
+
+  background: linear-gradient(135deg, #fff9e9, #ffdf96) !important;
+  border: 3px solid #e6a51b !important;
+  border-radius: 50px !important;
+
+  color: #00452b !important;
+  text-decoration: none !important;
+  font-size: 15px;
+  font-weight: 800;
+  white-space: nowrap;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .25);
+}
+
+.top-whatsapp strong {
+  display: block;
+  color: #b51e16;
+  font-size: 22px;
+}
+
+.whatsapp-circle {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #079c59;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+/* =========================================
+   LARGE FESTIVE FIREWORKS
+========================================= */
+
+.fireworks-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.firework {
+  position: absolute;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+
+  background: repeating-conic-gradient(from 0deg,
+      #f4a000 0deg 2deg,
+      transparent 2deg 15deg);
+
+  -webkit-mask-image: radial-gradient(circle,
+      transparent 0 12%,
+      black 15% 75%,
+      transparent 78%);
+
+  mask-image: radial-gradient(circle,
+      transparent 0 12%,
+      black 15% 75%,
+      transparent 78%);
+
+  filter: drop-shadow(0 0 5px #ffc54e);
+
+  animation: fireworkGlow 2s ease-in-out infinite;
+}
+
+.firework::after {
+  content: "✦";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f5a500;
+  font-size: 27px;
+}
+
+.f1 {
+  left: 5%;
+  top: 12%;
+}
+
+.f2 {
+  left: 29%;
+  top: 3%;
+  width: 75px;
+  height: 75px;
+}
+
+.f3 {
+  right: 29%;
+  top: 3%;
+  width: 75px;
+  height: 75px;
+}
+
+.f4 {
+  right: 5%;
+  top: 12%;
+}
+
+.f5 {
+  left: 14%;
+  bottom: 5%;
+  width: 55px;
+  height: 55px;
+}
+
+.f6 {
+  right: 14%;
+  bottom: 5%;
+  width: 55px;
+  height: 55px;
+}
+
+.f7 {
+  left: 3%;
+  top: 55%;
+  width: 55px;
+  height: 55px;
+}
+
+.f8 {
+  right: 3%;
+  top: 55%;
+  width: 55px;
+  height: 55px;
+}
+
+@keyframes fireworkGlow {
+
+  0%,
+  100% {
+    transform: scale(.88) rotate(0deg);
+    opacity: .7;
+  }
+
+  50% {
+    transform: scale(1.12) rotate(12deg);
+    opacity: 1;
+  }
+}
+
+/* Keep heading and product cards above fireworks */
+
+.section-heading,
+.product-grid {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================
+   RESPONSIVE HEADER
+========================================= */
+
+@media (max-width: 1250px) {
+  .topbar {
+    grid-template-columns: 150px 1fr 390px !important;
+  }
+
+  .brand-logo img {
+    width: 135px !important;
+  }
+
+  .brand-message h2 {
+    font-size: 23px !important;
+  }
+
+  .header-features {
+    grid-column: 2 / 3;
+    grid-row: 2;
+  }
+
+  .top-whatsapp {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+}
+
+@media (max-width: 750px) {
+  .topbar {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px !important;
+    padding: 12px !important;
+  }
+
+  .brand-logo {
+    border: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  .brand-message {
+    width: 100%;
+    border: none;
+  }
+
+  .brand-message h2 {
+    white-space: normal;
+    font-size: 21px !important;
+  }
+
+  .brand-message p {
+    white-space: normal;
+    font-size: 11px;
+  }
+
+  .header-features {
+    width: 100%;
+  }
+
+  .header-feature strong {
+    font-size: 11px;
+  }
+
+  .top-whatsapp {
+    width: fit-content;
+  }
+
+  .firework {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+/* =========================================
+   MILK QUEEN - REFERENCE IMAGE HEADER
+========================================= */
+
+.topbar {
+  width: 100% !important;
+  min-height: 120px !important;
+  height: auto !important;
+  padding: 8px 2.5% !important;
+
+  display: grid !important;
+  grid-template-columns: 205px minmax(350px, 1fr) 520px 265px !important;
+  align-items: center !important;
+  gap: 15px !important;
+
+  background:
+    radial-gradient(ellipse at center, #005432, #00351f 75%) !important;
+
+  border: 5px solid #e6a51b !important;
+  border-top: 7px solid #f7c64b !important;
+  border-bottom: 8px solid #edb32b !important;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, .25) !important;
+
+  position: relative;
+  z-index: 10;
+}
+
+/* Golden decorative corners */
+
+.topbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  background:
+    linear-gradient(135deg, #ffd66b, transparent 18%) top left,
+    linear-gradient(225deg, #ffd66b, transparent 18%) top right,
+    linear-gradient(45deg, #ffd66b, transparent 18%) bottom left,
+    linear-gradient(315deg, #ffd66b, transparent 18%) bottom right;
+  background-size: 65px 65px;
+  background-repeat: no-repeat;
+}
+
+/* Logo */
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-right: 2px solid #e8b438;
+  padding-right: 15px;
+}
+
+.brand-logo img {
+  width: 185px !important;
+  height: 100px !important;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff9e9;
+  border: 3px solid #e9b63c;
+  padding: 3px;
+}
+
+/* Main brand title */
+
+.brand-message {
+  text-align: center;
+  min-width: 0;
+  border-right: 2px solid #e8b438;
+  padding: 10px 15px;
+}
+
+.brand-message h2 {
+  margin: 0;
+  color: #ffe3a0 !important;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 2.2vw, 32px) !important;
+  font-weight: 800;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.brand-message p {
+  margin: 9px 0 0;
+  color: #fff5df !important;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.brand-message p span {
+  color: #f6bd37;
+  padding: 0 8px;
+}
+
+/* Feature section */
+
+.header-features {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  height: 85px;
+  gap: 0 !important;
+}
+
+.header-feature {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+
+  background: transparent !important;
+  border: none !important;
+  border-right: 2px solid #dca629 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  color: #fff7e5;
+  text-align: center;
+}
+
+.header-feature:last-child {
+  border-right: none !important;
+}
+
+.feature-symbol {
+  font-size: 34px;
+  line-height: 1;
+  color: #f7c13d;
+  text-shadow: 0 0 8px rgba(255, 190, 45, .45);
+}
+
+.header-feature strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  line-height: 1.2;
+  color: #fff8e8;
+}
+
+/* WhatsApp button */
+
+.top-whatsapp {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 10px 13px !important;
+  min-height: 72px;
+
+  background: linear-gradient(135deg, #fff9e9, #ffdf96) !important;
+  border: 3px solid #e6a51b !important;
+  border-radius: 50px !important;
+
+  color: #00452b !important;
+  text-decoration: none !important;
+  font-size: 15px;
+  font-weight: 800;
+  white-space: nowrap;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .25);
+}
+
+.top-whatsapp strong {
+  display: block;
+  color: #b51e16;
+  font-size: 22px;
+}
+
+.whatsapp-circle {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #079c59;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+/* =========================================
+   LARGE FESTIVE FIREWORKS
+========================================= */
+
+.fireworks-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.firework {
+  position: absolute;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+
+  background: repeating-conic-gradient(from 0deg,
+      #f4a000 0deg 2deg,
+      transparent 2deg 15deg);
+
+  -webkit-mask-image: radial-gradient(circle,
+      transparent 0 12%,
+      black 15% 75%,
+      transparent 78%);
+
+  mask-image: radial-gradient(circle,
+      transparent 0 12%,
+      black 15% 75%,
+      transparent 78%);
+
+  filter: drop-shadow(0 0 5px #ffc54e);
+
+  animation: fireworkGlow 2s ease-in-out infinite;
+}
+
+.firework::after {
+  content: "✦";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f5a500;
+  font-size: 27px;
+}
+
+.f1 {
+  left: 5%;
+  top: 12%;
+}
+
+.f2 {
+  left: 29%;
+  top: 3%;
+  width: 75px;
+  height: 75px;
+}
+
+.f3 {
+  right: 29%;
+  top: 3%;
+  width: 75px;
+  height: 75px;
+}
+
+.f4 {
+  right: 5%;
+  top: 12%;
+}
+
+.f5 {
+  left: 14%;
+  bottom: 5%;
+  width: 55px;
+  height: 55px;
+}
+
+.f6 {
+  right: 14%;
+  bottom: 5%;
+  width: 55px;
+  height: 55px;
+}
+
+.f7 {
+  left: 3%;
+  top: 55%;
+  width: 55px;
+  height: 55px;
+}
+
+.f8 {
+  right: 3%;
+  top: 55%;
+  width: 55px;
+  height: 55px;
+}
+
+@keyframes fireworkGlow {
+
+  0%,
+  100% {
+    transform: scale(.88) rotate(0deg);
+    opacity: .7;
+  }
+
+  50% {
+    transform: scale(1.12) rotate(12deg);
+    opacity: 1;
+  }
+}
+
+/* Keep heading and product cards above fireworks */
+
+.section-heading,
+.product-grid {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================
+   RESPONSIVE HEADER
+========================================= */
+
+@media (max-width: 1250px) {
+  .topbar {
+    grid-template-columns: 150px 1fr 390px !important;
+  }
+
+  .brand-logo img {
+    width: 135px !important;
+  }
+
+  .brand-message h2 {
+    font-size: 23px !important;
+  }
+
+  .header-features {
+    grid-column: 2 / 3;
+    grid-row: 2;
+  }
+
+  .top-whatsapp {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+}
+
+@media (max-width: 750px) {
+  .topbar {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px !important;
+    padding: 12px !important;
+  }
+
+  .brand-logo {
+    border: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  .brand-message {
+    width: 100%;
+    border: none;
+  }
+
+  .brand-message h2 {
+    white-space: normal;
+    font-size: 21px !important;
+  }
+
+  .brand-message p {
+    white-space: normal;
+    font-size: 11px;
+  }
+
+  .header-features {
+    width: 100%;
+  }
+
+  .header-feature strong {
+    font-size: 11px;
+  }
+
+  .top-whatsapp {
+    width: fit-content;
+  }
+
+  .firework {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+/* FIX: HEADER ELEMENTS OVERLAPPING */
+
+.topbar {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid !important;
+  grid-template-columns: 205px minmax(350px, 1fr) 390px 265px !important;
+  align-items: center !important;
+  gap: 15px !important;
+  min-height: 120px !important;
+  padding: 8px 2.5% !important;
+}
+
+/* Keep decorative corners behind the content */
+.topbar::before {
+  z-index: 0;
+  pointer-events: none;
+}
+
+.topbar::after {
+  content: none !important;
+}
+
+/* Keep all header content above decorations */
+.topbar>* {
+  position: relative;
+  z-index: 2;
+}
+
+/* Prevent the brand title from overlapping */
+.brand-message {
+  position: relative;
+  z-index: 2;
+  min-width: 0 !important;
+  text-align: center;
+}
+
+.brand-message h2 {
+  font-size: clamp(20px, 2vw, 30px) !important;
+  white-space: nowrap;
+  line-height: 1.3;
+}
+
+/* Keep feature badges properly aligned */
+.header-features {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Keep WhatsApp section in its own space */
+.top-whatsapp {
+  position: relative;
+  z-index: 2;
+  justify-self: end;
+}
